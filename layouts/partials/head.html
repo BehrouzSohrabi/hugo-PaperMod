@@ -1,3 +1,11 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW08Y44RLQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FW08Y44RLQ');
+</script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,7 +16,7 @@
 {{- end }}
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<title>{{ site.Title }}{{ if .IsHome }}{{ else }}{{ if .Title }} | {{ .Title }}{{ end }}{{ end }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}
@@ -23,9 +31,6 @@
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
-{{- if site.Params.analytics.google.SiteVerificationTag }}
-<meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
-{{- end }}
 {{- if site.Params.analytics.yandex.SiteVerificationTag }}
 <meta name="yandex-verification" content="{{ site.Params.analytics.yandex.SiteVerificationTag }}">
 {{- end }}

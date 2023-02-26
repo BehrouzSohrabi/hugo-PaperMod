@@ -1,0 +1,36 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+{{ $section := $.Site.Params.projectsSections }}
+{{ range .Site.Taxonomies.categories }}
+  {{ $pages := where .Pages "Section" "in" $section }}
+  {{ if $pages }}
+    <h2 class="projects-category">{{ .Page.Title }}</h2>
+    <div class="projects-container">
+    {{ range $pages }}
+      <div class="post-entry projects-item">
+        <a href="{{ .Params.link }}" target="_blank">{{ .Title }}</a>
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+        <span>{{ .Title }}</span>
+        <p>{{ .Summary }}</p>
+        <ul>
+          {{ range .Params.tags }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{- end }}{{/* end main */}}

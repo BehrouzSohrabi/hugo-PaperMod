@@ -1,3 +1,13 @@
 {{- define "main" }}
 <div class="not-found">404</div>
+<div class="nick-container"></div>
+<script>
+const container = document.querySelector('.nick-container');
+document.body.addEventListener('mousemove', (event) => {
+    let height = 50 + (event.clientY / window.innerHeight) * 250
+    let width = 150 + (event.clientX / window.innerWidth) * 150
+    container.style.height = `${height}px`;
+    container.style.width = `${width}px`;
+});
+</script>
 {{- end }}{{/* end main */ -}}

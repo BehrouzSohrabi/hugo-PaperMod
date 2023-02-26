@@ -32,6 +32,13 @@
     font-size: 16px;
 }
 
+.next-crumb::after{
+    content: '»';
+    margin:0 5px;
+    opacity: .5;
+    vertical-align: middle;
+}
+
 .post-content {
     color: var(--content);
 }

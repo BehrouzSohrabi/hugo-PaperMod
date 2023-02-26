@@ -1,0 +1,25 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    {{- partial "breadcrumbs.html" . }}
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+<p class="contact-paragraph">
+    Thanks for stopping by my page! If you have any questions, thoughts, or just want to say hi, don't hesitate to get in touch with me. I'd love to hear from you! You can drop me an email at <b class="no-wrap">sohrabi.beh [at] gmail [dot] com</b> and I'll get back to you as soon as possible.
+</p>
+
+<p class="contact-paragraph">
+    Besides email, you can also find me on Github, Kaggle, and LinkedIn. Feel free to connect with me there and check out some of the projects.
+</p>
+
+{{ partial "social_icons.html" site.Params.socialIcons }}
+
+{{- end }}{{/* end main */ -}}

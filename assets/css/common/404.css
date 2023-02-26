@@ -9,3 +9,13 @@
     font-size: 160px;
     font-weight: 700;
 }
+.nick-container {
+    position: fixed;
+    height: 50px;
+    width: 150px;
+    pointer-events: none;
+    background: url(/images/404.png) no-repeat center top;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+}

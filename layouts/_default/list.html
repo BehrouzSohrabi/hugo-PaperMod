@@ -60,7 +60,6 @@
 {{- else if $term }}
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
-
 <article class="{{ $class }}">
   {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
